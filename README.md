@@ -1,5 +1,7 @@
 # PowerLessShell
 
+> Now with Python3 support!
+
 PowerLessShell rely on MSBuild.exe to remotely execute PowerShell scripts and commands without spawning powershell.exe. 
 You can also execute raw shellcode using the same approach.
 
@@ -30,9 +32,9 @@ https://docs.microsoft.com/en-us/visualstudio/msbuild/property-functions
 PowerLessShell use commandline argument to generate the final file.
 
 ```
-$ python PowerLessShell.py -h
+$ uv run PowerLessShell.py -h
 PowerLessShell Less is More
-Mr.Un1k0d3r RingZer0 Team
+Mr.Un1k0d3r RingZer0 Team (python3 port by @whokilleddb)
 -----------------------------------------------------------
 usage: PowerLessShell.py [-h] [-type TYPE] -source SOURCE -output OUTPUT
                          [-arch ARCH] [-condition CONDITION]
@@ -51,9 +53,9 @@ optional arguments:
 
 Generating a powershell payload
 ```
-$ python PowerLessShell.py -type powershell -source script.ps1 -output malicious.csproj
+$ uv run PowerLessShell.py -type powershell -source script.ps1 -output malicious.csproj
 PowerLessShell Less is More
-Mr.Un1k0d3r RingZer0 Team
+Mr.Un1k0d3r RingZer0 Team (python3 port by @whokilleddb)
 -----------------------------------------------------------
 Generating the msbuild file using include/template-powershell.csproj as the template
 File 'malicious.csproj' created
@@ -62,9 +64,9 @@ Process completed
 
 Generating a shellcode payload
 ```
-$ python PowerLessShell.py -source shellcode.raw -output malicious.csproj
+$ uv run PowerLessShell.py -source shellcode.raw -output malicious.csproj
 PowerLessShell Less is More
-Mr.Un1k0d3r RingZer0 Team
+Mr.Un1k0d3r RingZer0 Team (python3 port by @whokilleddb)
 -----------------------------------------------------------
 Generating the msbuild file using include/template-shellcode.csproj as the template
 File 'malicious.csproj' created
@@ -73,9 +75,9 @@ Process completed
 
 Generating a 64 bits shellcode payload
 ```
-$ python PowerLessShell.py -source shellcode64.raw -output malicious.csproj -arch 64
+$ uv run PowerLessShell.py -source shellcode64.raw -output malicious.csproj -arch 64
 PowerLessShell Less is More
-Mr.Un1k0d3r RingZer0 Team
+Mr.Un1k0d3r RingZer0 Team (python3 port by @whokilleddb)
 -----------------------------------------------------------
 Generating the msbuild file using include/template-shellcode.csproj as the template
 Generating a payload for a 64 bits shellcode! Don't forget to use the 64 bits version of msbuild.exe
@@ -115,5 +117,5 @@ Spawns cmd.exe on the target system if
 * rename_msbuild is run with a username/password specified
 
 # Credit
-Mr.Un1k0d3r RingZer0 Team 2017
+Mr.Un1k0d3r RingZer0 Team (python3 port by @whokilleddb) 2017
 
